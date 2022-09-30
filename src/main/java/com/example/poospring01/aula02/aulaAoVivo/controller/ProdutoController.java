@@ -29,11 +29,11 @@ public class ProdutoController {
                 .findFirst();
 
         if(produto.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND); //404
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404
         }
 
 
-        return new ResponseEntity<>(produto.get(), HttpStatus.OK); //200
+        return new ResponseEntity<>(produto.get(), HttpStatus.OK); // 200
     }
 
     @PostMapping
@@ -41,7 +41,7 @@ public class ProdutoController {
         // para adicionar o id de forma "automática"
         produto.setId(produtos.size() + 1);
         produtos.add(produto);
-        return new ResponseEntity<>(produto, HttpStatus.CREATED); //201
+        return new ResponseEntity<>(produto, HttpStatus.CREATED); // 201
     }
 
     @DeleteMapping("/{id}")
@@ -51,10 +51,17 @@ public class ProdutoController {
                 .findFirst();
 
         if(produto.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND); //404
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404
         }
 
         produtos.remove(produto.get());
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT); //204
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT); // 204
+    }
+
+    @GetMapping("all")
+    public ResponseEntity<List<Produto>> getAll() {
+        return new ResponseEntity<>(produtos, HttpStatus.OK); // 200
+        // mesmo retorno do anterior, escrito de outra forma
+        // return ResponseEntity.ok(produtos);
     }
 }
