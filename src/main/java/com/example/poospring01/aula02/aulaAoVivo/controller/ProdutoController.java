@@ -43,4 +43,18 @@ public class ProdutoController {
         produtos.add(produto);
         return new ResponseEntity<>(produto, HttpStatus.CREATED); //201
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProduto(@PathVariable int id) {
+        Optional<Produto> produto = produtos.stream()
+                .filter(p -> p.getId() == id)
+                .findFirst();
+
+        if(produto.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); //404
+        }
+
+        produtos.remove(produto.get());
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT); //204
+    }
 }
