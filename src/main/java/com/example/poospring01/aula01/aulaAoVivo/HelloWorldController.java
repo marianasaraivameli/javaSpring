@@ -1,4 +1,4 @@
-package com.example.poospring01;
+package com.example.poospring01.aula01.aulaAoVivo;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
