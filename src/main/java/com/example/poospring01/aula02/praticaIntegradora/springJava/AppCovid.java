@@ -1,7 +1,11 @@
 package com.example.poospring01.aula02.praticaIntegradora.springJava;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AppCovid {
     public static void main(String[] args) {
+        List<Sintoma> listaDeSintomas = new ArrayList<>();
 
         Sintoma s1 = new Sintoma("TOS01", "Tosse Seca",1 );
         Sintoma s2 = new Sintoma("DIA01", "Diarréia",2 );
