@@ -1,5 +1,6 @@
 package com.example.poospring01.aula02.aulaAoVivo.controller;
 
+import com.example.poospring01.aula02.aulaAoVivo.dto.ProdutoDTO;
 import com.example.poospring01.aula02.aulaAoVivo.model.Produto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,20 @@ public class ProdutoController {
 
         return new ResponseEntity<>(produto.get(), HttpStatus.OK); // 200
     }
+
+//    @GetMapping("/id")
+//    public ResponseEntity<ProdutoDTO> getProduto(@PathVariable int id) {
+//        Optional<Produto> produto = produtos.stream()
+//                .filter(p -> p.getId() == id)
+//                .findFirst();
+//
+//        if(produto.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404
+//        }
+//
+//        ProdutoDTO produtoDTO = new ProdutoDTO(produto.get());
+//        return new ResponseEntity<>(produtoDTO, HttpStatus.OK); // 200
+//    }
 
     @PostMapping
     public ResponseEntity<Produto> novoProduto(@RequestBody Produto produto) {
