@@ -6,8 +6,8 @@ import static java.util.Collections.nCopies;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/romanos")
+//@RestController
+//@RequestMapping("/romanos")
 public class NumerosRomanos {
     //  https://iteracao.info/java-conversao-de-decimais-em-romanos/
     private static final int[] DECIMAIS =
