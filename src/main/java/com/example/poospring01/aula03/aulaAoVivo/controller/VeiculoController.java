@@ -36,6 +36,11 @@ public class VeiculoController {
         return new ResponseEntity<>(service.getAllOrderByValue(), HttpStatus.OK);
     }
 
+    @GetMapping("/model/{model}")
+    public ResponseEntity<List<Veiculo>> getAllByModel(@PathVariable String model) {
+        return new ResponseEntity<>(service.getByModel(model), HttpStatus.OK);
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void save(@RequestBody Veiculo veiculo) {

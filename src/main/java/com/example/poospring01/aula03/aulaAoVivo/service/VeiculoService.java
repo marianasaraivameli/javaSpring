@@ -42,4 +42,13 @@ public class VeiculoService implements IVeiculo{
     public void save(Veiculo veiculo) {
         repo.saveVeiculo(veiculo);
     }
+
+    @Override
+    public List<Veiculo> getByModel(String model) {
+        return getAllVeiculo().stream()
+                .filter(v -> v.getModelo().equalsIgnoreCase(model))
+                .collect(Collectors.toList());
+    }
+
+
 }

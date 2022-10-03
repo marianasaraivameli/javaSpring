@@ -10,4 +10,6 @@ public interface IVeiculo {
     List<Veiculo> getAllVeiculo();
     List<Veiculo> getAllOrderByValue();
     void save (Veiculo veiculo);
+
+    List<Veiculo> getByModel(String model);
 }
