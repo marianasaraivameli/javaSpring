@@ -32,12 +32,14 @@ public class PessoaController {
     }
 
     @GetMapping("/risk")
-    public ResponseEntity<List<Pessoa>> getPessoasIdosas() {
+    public ResponseEntity<PessoaDTO> getPessoasIdosas() {
         List<Pessoa> pessoasRisk = pessoaRepository.getPessoas().stream()
                 .filter(p -> p.getIdade() >= 60)
                 .collect(Collectors.toList());
 
-        return new ResponseEntity<>(pessoasRisk, HttpStatus.OK);
+        PessoaDTO pessoaDTO = new PessoaDTO(pessoasRisk.get(1));
+
+        return new ResponseEntity<>(pessoaDTO, HttpStatus.OK);
     }
 
 
