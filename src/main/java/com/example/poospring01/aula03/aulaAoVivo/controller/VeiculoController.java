@@ -1,6 +1,8 @@
 package com.example.poospring01.aula03.aulaAoVivo.controller;
 
+import com.example.poospring01.aula03.aulaAoVivo.exception.VeiculoNotFoundException;
 import com.example.poospring01.aula03.aulaAoVivo.model.Veiculo;
+import com.example.poospring01.aula03.aulaAoVivo.service.IVeiculo;
 import com.example.poospring01.aula03.aulaAoVivo.service.VeiculoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,11 +19,16 @@ public class VeiculoController {
     // private VeiculoService service = new VeiculoService();
 
     @Autowired
-    private VeiculoService service;
+//    private VeiculoService service;
+    private IVeiculo service;
 
     @GetMapping("/{placa}")
     public ResponseEntity<Veiculo> getVeiculo(@PathVariable String placa) {
-        Veiculo veiculo = service.getVeiculo(placa);
-        return new ResponseEntity<>(veiculo, HttpStatus.OK);
+        try {
+            Veiculo veiculo = service.getVeiculo(placa);
+            return new ResponseEntity<>(veiculo, HttpStatus.OK);
+        }catch (VeiculoNotFoundException ex) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }
