@@ -15,17 +15,16 @@ public class PessoaController {
     private RepositoryPessoa pessoaRepository;
 
 
-    @PostMapping
-    public ResponseEntity<Pessoa> postPessoa(@RequestBody Pessoa pessoa) {
-        pessoaRepository.savePessoa(pessoa);
-        return new ResponseEntity<>(pessoa, HttpStatus.OK);
-    }
-
-
-
-//    @GetMapping("/all")
-//    public ResponseEntity<Pessoa> getAllPessoas() {
-//        return ResponseEntity<Pessoa> pessoasLista;
+//    @PostMapping
+//    public ResponseEntity<Pessoa> postPessoa(@RequestBody Pessoa pessoa) {
+//        pessoaRepository.savePessoa(pessoa);
+//        return new ResponseEntity<>(pessoa, HttpStatus.OK);
 //    }
 
+
+
+    @GetMapping
+    public ResponseEntity<List<Pessoa>> getAllPessoas() {
+        return new ResponseEntity<>(pessoaRepository.getPessoas(), HttpStatus.OK);
+    }
 }
