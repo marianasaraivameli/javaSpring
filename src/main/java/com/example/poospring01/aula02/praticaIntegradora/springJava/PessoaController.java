@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/findRiskPerson")
@@ -27,6 +29,15 @@ public class PessoaController {
         pessoaRepository.savePessoa(pessoa);
         PessoaDTO pessoaDTO = new PessoaDTO(pessoa);
         return new ResponseEntity<>(pessoaDTO, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/risk")
+    public ResponseEntity<List<Pessoa>> getPessoasIdosas() {
+        List<Pessoa> pessoasRisk = pessoaRepository.getPessoas().stream()
+                .filter(p -> p.getIdade() >= 60)
+                .collect(Collectors.toList());
+
+        return new ResponseEntity<>(pessoasRisk, HttpStatus.OK);
     }
 
 
