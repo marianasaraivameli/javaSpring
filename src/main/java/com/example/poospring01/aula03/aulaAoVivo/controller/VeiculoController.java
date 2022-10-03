@@ -1,9 +1,8 @@
 package com.example.poospring01.aula03.aulaAoVivo.controller;
 
-import com.example.poospring01.aula03.aulaAoVivo.exception.VeiculoNotFoundException;
+import com.example.poospring01.aula03.aulaAoVivo.exception.NotFoundException;
 import com.example.poospring01.aula03.aulaAoVivo.model.Veiculo;
 import com.example.poospring01.aula03.aulaAoVivo.service.IVeiculo;
-import com.example.poospring01.aula03.aulaAoVivo.service.VeiculoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/veiculos")
@@ -24,11 +25,12 @@ public class VeiculoController {
 
     @GetMapping("/{placa}")
     public ResponseEntity<Veiculo> getVeiculo(@PathVariable String placa) {
-        try {
-            Veiculo veiculo = service.getVeiculo(placa);
-            return new ResponseEntity<>(veiculo, HttpStatus.OK);
-        }catch (VeiculoNotFoundException ex) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        Veiculo veiculo = service.getVeiculo(placa);
+        return new ResponseEntity<>(veiculo, HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Veiculo>> getAll() {
+        return new ResponseEntity<>(service.getAllVeiculo(), HttpStatus.OK);
     }
 }

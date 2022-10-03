@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Poospring01Application {
 
     public static void main(String[] args) {
+
         SpringApplication.run(Poospring01Application.class, args);
     }
 

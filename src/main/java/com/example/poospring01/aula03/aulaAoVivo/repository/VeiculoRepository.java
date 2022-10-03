@@ -31,6 +31,16 @@ public class VeiculoRepository {
         }
 
         return Optional.empty();
+    }
 
+    public List<Veiculo> getAll() {
+        List<Veiculo> veiculos = null;
+        try {
+            veiculos = Arrays.asList(mapper.readValue(new File(linkFile), Veiculo[].class));
+        }catch (Exception ex) {
+
+        }
+
+        return veiculos;
     }
 }
