@@ -15,12 +15,11 @@ public class PessoaController {
     private RepositoryPessoa pessoaRepository;
 
 
-//    @PostMapping
-//    public ResponseEntity<Pessoa> postPessoa(@RequestBody Pessoa pessoa) {
-//        pessoaRepository.savePessoa(pessoa);
-//        return new ResponseEntity<>(pessoa, HttpStatus.OK);
-//    }
-
+    @PostMapping
+    public ResponseEntity<Pessoa> postPessoa(@RequestBody Pessoa pessoa) {
+        pessoaRepository.savePessoa(pessoa);
+        return new ResponseEntity<>(pessoa, HttpStatus.CREATED);
+    }
 
 
     @GetMapping
