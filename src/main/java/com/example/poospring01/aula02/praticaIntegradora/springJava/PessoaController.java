@@ -15,10 +15,18 @@ public class PessoaController {
     private RepositoryPessoa pessoaRepository;
 
 
+//    @PostMapping
+//    public ResponseEntity<Pessoa> postPessoa(@RequestBody Pessoa pessoa) {
+//        pessoaRepository.savePessoa(pessoa);
+//        return new ResponseEntity<>(pessoa, HttpStatus.CREATED);
+//    }
+
+    // usando o objeto pessoaDTO para retornar apenas os dados que eu quero, resguardando as informações sigilosas do cliente.
     @PostMapping
-    public ResponseEntity<Pessoa> postPessoa(@RequestBody Pessoa pessoa) {
+    public ResponseEntity<PessoaDTO> postPessoa(@RequestBody Pessoa pessoa) {
         pessoaRepository.savePessoa(pessoa);
-        return new ResponseEntity<>(pessoa, HttpStatus.CREATED);
+        PessoaDTO pessoaDTO = new PessoaDTO(pessoa);
+        return new ResponseEntity<>(pessoaDTO, HttpStatus.CREATED);
     }
 
 
