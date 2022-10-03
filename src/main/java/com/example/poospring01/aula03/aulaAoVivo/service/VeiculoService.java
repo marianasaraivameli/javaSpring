@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class VeiculoService implements IVeiculo{
@@ -29,5 +30,16 @@ public class VeiculoService implements IVeiculo{
     public List<Veiculo> getAllVeiculo() {
 
         return repo.getAll();
+    }
+
+    @Override
+    public List<Veiculo> getAllOrderByValue() {
+        List<Veiculo> veiculos = repo.getAll();
+        return veiculos.stream().sorted().collect(Collectors.toList());
+    }
+
+    @Override
+    public void save(Veiculo veiculo) {
+        repo.saveVeiculo(veiculo);
     }
 }
