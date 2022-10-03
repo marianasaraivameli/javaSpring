@@ -18,9 +18,16 @@ public class AppCovid {
         Pessoa p4 = new Pessoa("PES04", "Nathalia", "Miranda", 67, s4);
 
 
+        listaDeSintomas.add(s1);
+        listaDeSintomas.add(s2);
+        listaDeSintomas.add(s3);
+        listaDeSintomas.add(s4);
+
         System.out.println(p1);
         System.out.println(p2);
         System.out.println(p3);
         System.out.println(p4);
+
+        System.out.println(listaDeSintomas);
     }
 }

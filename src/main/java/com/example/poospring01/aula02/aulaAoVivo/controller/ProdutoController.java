@@ -23,6 +23,13 @@ public class ProdutoController {
 
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<Produto>> getAll() {
+        return new ResponseEntity<>(produtos, HttpStatus.OK); // 200
+        // mesmo retorno do anterior, escrito de outra forma
+        // return ResponseEntity.ok(produtos);
+    }
+
     @GetMapping("/id")
     public ResponseEntity<Produto> getProduto(@PathVariable int id) {
         Optional<Produto> produto = produtos.stream()
@@ -73,10 +80,5 @@ public class ProdutoController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT); // 204
     }
 
-    @GetMapping("all")
-    public ResponseEntity<List<Produto>> getAll() {
-        return new ResponseEntity<>(produtos, HttpStatus.OK); // 200
-        // mesmo retorno do anterior, escrito de outra forma
-        // return ResponseEntity.ok(produtos);
-    }
+
 }
