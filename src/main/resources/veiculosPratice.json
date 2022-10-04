@@ -1,0 +1,33 @@
+[{
+  "brand" : "Fiat",
+  "model" : "Argo",
+  "manufactoringDate" : "10-10-2019",
+  "numberOfKilometers" : "19000",
+  "doors" : "5",
+  "price" : "45000",
+  "currency" : "ar",
+  "services" : [
+    {
+      "date" : "08-08-2022",
+      "kilometers" : "41000",
+      "descriptions" : "change pneus"
+    }
+  ],
+  "countOsOwners" : "2"
+}, {
+  "brand" : "Chevrolet",
+  "model" : "Onix",
+  "manufactoringDate" : "11-11-2020",
+  "numberOfKilometers" : "14000",
+  "doors" : "5",
+  "price" : "48000",
+  "currency" : "ar",
+  "services" : [
+    {
+      "date" : "01-01-2022",
+      "kilometers" : "34000",
+      "descriptions" : "change oleo"
+    }
+  ],
+  "countOfOwners" : "1"
+}]
