@@ -1,5 +1,6 @@
 package com.example.poospring01.aula03.praticaIntegradora.service;
 
+import com.example.poospring01.aula03.aulaAoVivo.model.Veiculo;
 import com.example.poospring01.aula03.praticaIntegradora.model.VeiculoPratice;
 import com.example.poospring01.aula03.praticaIntegradora.repository.VeiculoPraticeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,12 @@ public class VeiculoPraticeService implements IVeiculoPratice {
 
     @Override
     public List<VeiculoPratice> getAllVeiculos() {
-        return repository.getAllVeiculo();
+
+        return repository.getAllVeiculos();
+    }
+
+    @Override
+    public void adicionaVeiculo(VeiculoPratice veiculo) {
+        repository.adicionaVeiculo(veiculo);
     }
 }

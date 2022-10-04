@@ -6,13 +6,7 @@
   "doors" : "5",
   "price" : "45000",
   "currency" : "ar",
-  "services" : [
-    {
-      "date" : "08-08-2022",
-      "kilometers" : "41000",
-      "descriptions" : "change pneus"
-    }
-  ],
+  "id_services" : 1,
   "countOsOwners" : "2"
 }, {
   "brand" : "Chevrolet",
@@ -22,12 +16,6 @@
   "doors" : "5",
   "price" : "48000",
   "currency" : "ar",
-  "services" : [
-    {
-      "date" : "01-01-2022",
-      "kilometers" : "34000",
-      "descriptions" : "change oleo"
-    }
-  ],
+  "id_services" : 2,
   "countOfOwners" : "1"
 } ]

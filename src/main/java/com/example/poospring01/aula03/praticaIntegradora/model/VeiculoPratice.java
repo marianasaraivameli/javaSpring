@@ -1,16 +1,12 @@
 package com.example.poospring01.aula03.praticaIntegradora.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.util.List;
-
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class VeiculoPratice extends ServiceVeiculo {
-//    private int id;
+public class VeiculoPratice {
     private String brand;
     private String model;
     private String manufactoringDate;
@@ -18,6 +14,6 @@ public class VeiculoPratice extends ServiceVeiculo {
     private String doors;
     private String price;
     private String currency;
-    private List<ServiceVeiculo> services;
+    private int id_services;
     private String countOfOwners;
 }
