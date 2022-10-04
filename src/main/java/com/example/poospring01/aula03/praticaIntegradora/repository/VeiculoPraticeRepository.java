@@ -34,6 +34,7 @@ public class VeiculoPraticeRepository {
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
         List<VeiculoPratice> veiculos = getAllVeiculos();
+
         veiculos = new ArrayList<>(veiculos);
         veiculos.add(novoVeiculo);
 

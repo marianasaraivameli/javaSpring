@@ -7,7 +7,7 @@
   "price" : "45000",
   "currency" : "ar",
   "id_services" : 1,
-  "countOsOwners" : "2"
+  "countOfOwners" : "2"
 }, {
   "brand" : "Chevrolet",
   "model" : "Onix",
@@ -17,5 +17,25 @@
   "price" : "48000",
   "currency" : "ar",
   "id_services" : 2,
+  "countOfOwners" : "1"
+}, {
+  "brand" : "Honda",
+  "model" : "Civic",
+  "manufactoringDate" : "11-11-2020",
+  "numberOfKilometers" : "14000",
+  "doors" : "5",
+  "price" : "48000",
+  "currency" : "ar",
+  "id_services" : 1,
+  "countOfOwners" : "1"
+}, {
+  "brand" : "Honda",
+  "model" : "Civic",
+  "manufactoringDate" : "11-11-2020",
+  "numberOfKilometers" : "14000",
+  "doors" : "5",
+  "price" : "48000",
+  "currency" : "ar",
+  "id_services" : 1,
   "countOfOwners" : "1"
 } ]
