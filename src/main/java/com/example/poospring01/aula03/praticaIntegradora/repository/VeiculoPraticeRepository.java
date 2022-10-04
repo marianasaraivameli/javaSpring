@@ -17,7 +17,6 @@ public class VeiculoPraticeRepository {
         List<VeiculoPratice> veiculos = null;
         try {
             veiculos = Arrays.asList(mapperVeiculo.readValue(new File(linkFileVeiculosPratice), VeiculoPratice[].class));
-            System.out.println(veiculos);
         } catch (Exception ex) {
             System.out.println("Erro ao chamar getAllVeiculos");
         }
