@@ -1,5 +1,6 @@
 package com.example.poospring01.aula03.aulaAoVivo.service;
 
+import com.example.poospring01.aula03.aulaAoVivo.dto.VeiculoDTO;
 import com.example.poospring01.aula03.aulaAoVivo.exception.NotFoundException;
 import com.example.poospring01.aula03.aulaAoVivo.model.Veiculo;
 import com.example.poospring01.aula03.aulaAoVivo.repository.VeiculoRepository;
@@ -26,10 +27,19 @@ public class VeiculoService implements IVeiculo{
         return veiculo.get();
     }
 
-    @Override
-    public List<Veiculo> getAllVeiculo() {
+//    @Override
+//    public List<Veiculo> getAllVeiculo() {
+//
+//        return repo.getAll();
+//    }
 
-        return repo.getAll();
+    @Override
+    public List<VeiculoDTO> getAllVeiculo() {
+        // map transforma um conjunto de dados em outro tipo de classe.
+        return repo.getAll().stream()
+//                .map(v -> new VeiculoDTO(v)
+                .map(VeiculoDTO::new)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -45,7 +55,7 @@ public class VeiculoService implements IVeiculo{
 
     @Override
     public List<Veiculo> getByModel(String model) {
-        return getAllVeiculo().stream()
+        return getAllOrderByValue().stream()
                 .filter(v -> v.getModelo().equalsIgnoreCase(model))
                 .collect(Collectors.toList());
     }

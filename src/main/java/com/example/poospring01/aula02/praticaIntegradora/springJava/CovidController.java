@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("findSymptom")
-public class CovidController extends AppCovid{
+public class CovidController {
     static List<Sintoma> listaDeSintomas = new ArrayList<>();
 
     Sintoma s1 = new Sintoma("TOS01", "Tosse Seca",1 );

@@ -1,5 +1,6 @@
 package com.example.poospring01.aula03.aulaAoVivo.controller;
 
+import com.example.poospring01.aula03.aulaAoVivo.dto.VeiculoDTO;
 import com.example.poospring01.aula03.aulaAoVivo.exception.NotFoundException;
 import com.example.poospring01.aula03.aulaAoVivo.model.Veiculo;
 import com.example.poospring01.aula03.aulaAoVivo.service.IVeiculo;
@@ -27,7 +28,7 @@ public class VeiculoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Veiculo>> getAll() {
+    public ResponseEntity<List<VeiculoDTO>> getAll() {
         return new ResponseEntity<>(service.getAllVeiculo(), HttpStatus.OK);
     }
 
