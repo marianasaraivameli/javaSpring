@@ -7,6 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class VeiculoPratice {
+    private int id;
     private String brand;
     private String model;
     private String manufactoringDate;

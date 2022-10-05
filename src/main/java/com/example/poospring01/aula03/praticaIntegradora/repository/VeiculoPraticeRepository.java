@@ -44,4 +44,5 @@ public class VeiculoPraticeRepository {
             System.out.println("Erro ao adicionar novo veiculo");
         }
     }
+
 }
