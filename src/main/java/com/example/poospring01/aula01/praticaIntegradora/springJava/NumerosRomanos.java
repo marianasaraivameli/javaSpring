@@ -1,13 +1,14 @@
 package com.example.poospring01.aula01.praticaIntegradora.springJava;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import static java.lang.String.join;
 import static java.util.Collections.nCopies;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-//@RestController
-//@RequestMapping("/romanos")
 public class NumerosRomanos {
     //  https://iteracao.info/java-conversao-de-decimais-em-romanos/
     private static final int[] DECIMAIS =
