@@ -1,10 +1,5 @@
 package com.example.poospring01.aula01.praticaIntegradora.springJava;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import static java.lang.String.join;
 import static java.util.Collections.nCopies;
 
